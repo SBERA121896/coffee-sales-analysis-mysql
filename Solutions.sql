@@ -1,4 +1,6 @@
--- Monday Coffee --Data Analysis
+-- Coffee Sales --Data Analysis
+
+USE coffe_sales;
 
 SELECT * FROM city;
 SELECT * FROM customers;
@@ -137,18 +139,59 @@ ORDER BY 2 DESC;
 
 -- Q.9 Monthly Sales Growth
 -- Sales growth rate: Calculate the percentage growth (or decline) in sales over different time periods (monthly).
+WITH temp as(
+SELECT 
+    YEAR(sale_date) AS year,
+    MONTH(sale_date) AS month,
+    SUM(total) AS monthly_sale
+FROM
+    sales
+GROUP BY 1 , 2
+) SELECT year,month,ROUND(((monthly_sale - LAG(monthly_sale) OVER(ORDER BY year,month))
+	/LAG(monthly_sale) OVER(ORDER BY year,month))*100,2) AS growth 
+FROM 
+	temp;
+
+
+
+
+-- Q.10 Market Potential Analysis
+-- Identify top 3 city based on highest sales, return city name, total sale, total rent, total customers, estimated coffee consumer
+SELECT 
+    city.city_name,
+    SUM(sales.total) AS total_sales,
+    city.estimated_rent,
+    COUNT(DISTINCT sales.customer_id) AS total_customers,
+    (city.population * 0.25) AS coffee_consumers
+FROM
+    customers
+        INNER JOIN
+    sales ON customers.customer_id = sales.customer_id
+        INNER JOIN
+    city ON customers.city_id = city.city_id
+GROUP BY city.city_name , city.estimated_rent , city.population
+ORDER BY SUM(sales.total) DESC
+LIMIT 3;
 
 
 
 
 
-
-
-
-
-
-
-
+-- Rcomendation
+-- City1: Pune
+-- 	1. Highest total revenue.
+--     2. Rent is very low.
+--     3. Third most customers, which is 52.
+--     
+-- City2: Delhi
+--     1. Highest number of coffee consumers.
+--     2. Second most customers, which is 68.
+--     3. Hold 5th position in terms of revenue.
+--     
+-- City3: Jaipur
+-- 	1. Highest number of customers.
+--     2. 4th highest revenue.
+--     3. Rent is very low.
 
 
 
