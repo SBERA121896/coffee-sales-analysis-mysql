@@ -21,34 +21,34 @@ This project analyzes coffee sales data across different cities using MySQL. It 
 ## Key Questions
 
 Q.1 Coffee Consumers Count 
-— Estimate coffee consumers in each city assuming 25% of the population consumes coffee.
+ Estimate coffee consumers in each city assuming 25% of the population consumes coffee.
 
 Q.2 Total Revenue from Coffee Sales 
-— Calculate total revenue across cities during the last quarter of 2023.
+ Calculate total revenue across cities during the last quarter of 2023.
 
 Q.3 Sales Count for Each Product 
-— Determine how many units of each coffee product have been sold.
+ Determine how many units of each coffee product have been sold.
 
 Q.4 Average Sales Amount per City 
-— Calculate the average sales amount per customer in each city.
+ Calculate the average sales amount per customer in each city.
 
 Q.5 City Population and Coffee Consumers 
-— List each city with its population and estimated coffee consumers.
+ List each city with its population and estimated coffee consumers.
 
 Q.6 Top Selling Products by City 
-— Identify the top 3 selling coffee products in each city based on sales volume.
+ Identify the top 3 selling coffee products in each city based on sales volume.
 
-Q.7 ustomer Segmentation by City 
-— Find the number of unique customers who purchased coffee products in each city.
+Q.7 Customer Segmentation by City 
+ Find the number of unique customers who purchased coffee products in each city.
 
 Q.8 Average Sale vs Rent
-— Compare average sales per customer with estimated rent for each city.
+ Compare average sales per customer with estimated rent for each city.
 
 Q.9 Monthly Sales Growth 
-— Calculate monthly sales growth or decline using month-over-month percentage changes.
+ Calculate monthly sales growth or decline using month-over-month percentage changes.
 
 Q.10 Market Potential Analysis 
-— Identify the top 3 cities based on sales and analyze sales, estimated rent, customer base, and estimated coffee consumers.
+ Identify the top 3 cities based on sales and analyze sales, estimated rent, customer base, and estimated coffee consumers.
 
 ## Key Recommendations
 
